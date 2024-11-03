@@ -46,6 +46,8 @@ stdenv.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
+    mkdir -p "$out/bin" "$dev/"{lib,include}
+
     cp src/pluto{,c} "$out/bin"
     cp src/libpluto* "$dev/lib"
     cp src/{lua,lualib,lauxlib}.h src/lua.hpp "$dev/include"
