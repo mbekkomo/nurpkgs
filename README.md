@@ -12,3 +12,5 @@ Uncomment this if you use travis:
 -->
 [![Cachix Cache](https://img.shields.io/badge/cachix-mbekkomo-blue.svg)](https://mbekkomo.cachix.org)
 
+Software that are packaged:
+ - `plutolang`: [Pluto](https://pluto-lang.org)
