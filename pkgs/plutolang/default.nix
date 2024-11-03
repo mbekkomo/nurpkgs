@@ -1,5 +1,6 @@
 {
   clangStdenv,
+  lld,
   fetchFromGitHub,
   lib,
   php,
@@ -24,7 +25,7 @@ stdenv.mkDerivation rec {
     "dev"
   ];
 
-  nativeBuildInputs = [ php ];
+  nativeBuildInputs = [ php lld ];
 
   buildInputs = [ stdenv.cc.cc.lib ];
 
