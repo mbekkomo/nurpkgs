@@ -11,13 +11,13 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "plutolang";
-  version = "0.10.0";
+  version = "0.10.2";
 
   src = fetchFromGitHub {
     owner = pname;
     repo = "pluto";
     rev = version;
-    hash = "sha256-slsW/Kk3e+kdWkoQtQJbPxhznd/m2joWgOO5i1Y4G6E=";
+    sha256 = "133e63bdd29a9b124ea70045ceac7bb2e241909900a5f4e5a8cd06f9189c8ef7";
   };
 
   outputs = [
