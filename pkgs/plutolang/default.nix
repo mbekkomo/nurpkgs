@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
     owner = pname;
     repo = "pluto";
     rev = version;
-    sha256 = "133e63bdd29a9b124ea70045ceac7bb2e241909900a5f4e5a8cd06f9189c8ef7";
+    hash = "sha256-95hQ8qC3W/58vi4UiGyItpOSi0eGi4LHnGwy3XCLBz0=";
   };
 
   outputs = [
