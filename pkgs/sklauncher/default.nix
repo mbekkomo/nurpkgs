@@ -9,6 +9,7 @@
 }:
 let
   requiredLibraries = lib.makeLibraryPath [
+    (with xorg; [ libXxf86vm libX11 libXcursor ])
     xorg.libXxf86vm
     alsa-lib
   ];
@@ -22,7 +23,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [ makeWrapper ];
   buildInputs = [
     temurin-jre-bin-21
-    xorg.libXxf86vm
+    (with xorg; [ libXxf86vm libX11 libXcursor ])
     alsa-lib
   ];
 
