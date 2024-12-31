@@ -36,7 +36,7 @@ stdenv.mkDerivation {
 
   desktopItem = makeDesktopItem {
     name = "sklauncher";
-    desktopname = "SKLauncher";
+    desktopName = "SKLauncher";
     exec = "sklauncher";
     type = "Application";
     terminal = false;
