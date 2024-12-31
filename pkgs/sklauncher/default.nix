@@ -5,13 +5,15 @@
   xorg,
   alsa-lib,
   makeWrapper,
+  makeDesktopItem,
   ...
 }:
 let
   requiredLibraries = lib.makeLibraryPath [
-    (with xorg; [ libXxf86vm libX11 libXcursor ])
-    xorg.libXxf86vm
     alsa-lib
+    xorg.libXxf86vm
+    xorg.libX11
+    xorg.libXcursor
   ];
 in
 stdenv.mkDerivation {
@@ -21,11 +23,27 @@ stdenv.mkDerivation {
   src = ./.;
 
   nativeBuildInputs = [ makeWrapper ];
-  buildInputs = [
-    temurin-jre-bin-21
-    (with xorg; [ libXxf86vm libX11 libXcursor ])
-    alsa-lib
-  ];
+  buildInputs =
+    [
+      temurin-jre-bin-21
+      alsa-lib
+    ]
+    ++ (with xorg; [
+      libXxf86vm
+      libX11
+      libXcursor
+    ]);
+
+  desktopItem = makeDesktopItem {
+    name = "sklauncher";
+    desktopname = "SKLauncher";
+    exec = "sklauncher";
+    type = "Application";
+    terminal = false;
+    categories = [
+      "Game"
+    ];
+  };
 
   installPhase = ''
     mkdir -p $out/{share,bin}
