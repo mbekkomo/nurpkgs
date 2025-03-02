@@ -21,7 +21,8 @@
     {
       legacyPackages = forAllSystems (system: import ./default.nix {
         pkgs = import nixpkgs { inherit system; };
-      }) // emmylua-analyzer.packages;
+        emmylua-analyzer = emmylua-analyzer.packages.x86_64-linux;
+      });
       packages = forAllSystems (system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system});
     };
 }
