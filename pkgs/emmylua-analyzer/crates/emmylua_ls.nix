@@ -14,10 +14,10 @@ rustPlatform.buildRustPackage rec {
     owner = "CppCXY";
     repo = "emmylua-analyzer-rust";
     rev = version;
-    hash = lib.fakeHash;
+    hash = "sha256-cMqBNUR3zibWsERt9cJLCkZ8ksUrIdC6K5xLKHXJqR0=";
   };
-
-  cargoHash = lib.fakeHash;
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-AW1aCruxKk2vNKRkfpevdCWslr/JlZypzdTiAPIO0fo=";
 
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ stdenv.cc.cc.lib ];
