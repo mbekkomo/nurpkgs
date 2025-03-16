@@ -1,7 +1,6 @@
 {
   fetchFromGitHub,
   llvmPackages_19,
-  wrapQtAppsHook,
   kdePackages,
   tinyxml,
   stdenv,
@@ -20,7 +19,7 @@ stdenv.mkDerivation rec {
   version = "2025.3.3";
 
   nativeBuildInputs = [
-    wrapQtAppsHook
+    kdePackages.wrapQtAppsHook
     catch2
     gtest
     cmake
