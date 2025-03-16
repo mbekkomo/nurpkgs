@@ -1,6 +1,7 @@
 {
   fetchFromGitHub,
   llvmPackages_19,
+  wrapQtAppsHook,
   kdePackages,
   tinyxml,
   stdenv,
@@ -13,12 +14,13 @@
   jdk23,
   maven,
 }:
-  
+
 stdenv.mkDerivation rec {
   pname = "sourcetrail";
   version = "2025.3.3";
 
   nativeBuildInputs = [
+    wrapQtAppsHook
     catch2
     gtest
     cmake
@@ -44,6 +46,7 @@ stdenv.mkDerivation rec {
   };
 
   cmakeFlags = [
-    "--preset" "system-ninja-release"
+    "--preset"
+    "system-ninja-release"
   ];
 }
