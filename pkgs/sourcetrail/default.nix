@@ -2,6 +2,7 @@
   fetchFromGitHub,
   llvmPackages_19,
   kdePackages,
+  boost183,
   tinyxml,
   stdenv,
   catch2,
@@ -9,7 +10,6 @@
   gtest,
   cmake,
   ninja,
-  boost,
   jdk23,
   maven,
 }:
@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
     llvmPackages_19.clang-unwrapped.dev
     kdePackages.qtbase
     kdePackages.qtsvg
-    boost
+    boost183
     sqlite
     tinyxml
   ];
