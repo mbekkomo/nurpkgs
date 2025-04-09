@@ -7,6 +7,7 @@
   gnupg,
   libgpg-error,
   gpgme,
+  luajit,
 }:
 rustPlatform.buildRustPackage (self: {
   pname = "lux-cli";
@@ -32,6 +33,7 @@ rustPlatform.buildRustPackage (self: {
     gnupg
     libgpg-error
     gpgme
+    luajit
   ];
 
   env = {
