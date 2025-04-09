@@ -8,6 +8,7 @@
   libgpg-error,
   gpgme,
   luajit,
+  lib,
 }:
 rustPlatform.buildRustPackage (self: {
   pname = "lux-cli";
@@ -37,7 +38,11 @@ rustPlatform.buildRustPackage (self: {
   ];
 
   env = {
-    LIBGIT2_NO_VENDOR = 1;
+    LIBGIT2_NO_VENDOR =
+      if (builtins.match "^24\\.11" lib.version) == null then
+        1
+      else
+        0;
     LIBSSH2_SYS_USE_PKG_CONFIG = 1;
     LUX_SKIP_IMPURE_TESTS = 1;
   };
