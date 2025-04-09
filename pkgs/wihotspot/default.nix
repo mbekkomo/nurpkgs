@@ -81,5 +81,7 @@ stdenv.mkDerivation {
           ]
         }
     done
+    rm -f $out/bin/wihotspot
+    ln -s $out/bin/wihotspot{-gui,}
   '';
 }
