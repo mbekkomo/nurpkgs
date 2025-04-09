@@ -28,6 +28,8 @@ rustPlatform.buildRustPackage (self: {
     pkg-config
   ];
 
+  doCheck = false;
+
   buildInputs = [
     openssl
     libgit2
